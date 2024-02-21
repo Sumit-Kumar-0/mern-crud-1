@@ -1,0 +1,50 @@
+.users-table {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+.users-table td,
+.users-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.users-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.users-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+.users-table td:nth-child(5) {
+    width: 131px;
+}
+.users-table th:nth-child(5) {
+    width: 131px;
+}
+td.table-btn {
+    display: flex;
+    gap: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.delete {
+    color: rgb(255, 22, 22);
+    cursor: pointer;
+}
+.edit {
+    cursor: pointer;
+    color: rgb(77, 77, 77);
+}
+.delete:hover {
+    color: rgb(188, 12, 12);
+}
+.edit:hover {
+    color: rgb(43, 43, 43);
+}
+

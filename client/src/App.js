@@ -1,8 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
+import "../src/components/style/Common.css";
+import React from "react";
+import AllUsers from "./components/AllUsers";
 
 function App() {
-  return <div className="App">hello</div>;
+  return (
+    <>
+      <AllUsers />
+    </>
+  );
 }
 
 export default App;
