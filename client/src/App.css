@@ -4,3 +4,16 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+ul, li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.active{
+  color: #04aa6d !important;
+}
+
+main.main-container {
+  margin-top: 79px;
+}

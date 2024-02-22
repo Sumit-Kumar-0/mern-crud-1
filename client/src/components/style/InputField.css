@@ -1,0 +1,19 @@
+.input-field input {
+    padding: 14px;
+    font-size: 18px;
+    border: 2px solid #dbdbdb;
+    color: #000;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.input-field label {
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 100%;
+}

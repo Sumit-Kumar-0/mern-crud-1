@@ -13,7 +13,7 @@ export const createUserController = async (req, res) => {
     const existingUser = await userModel.findOne({ email });
     if (existingUser) {
       return res.status(200).json({
-        message: "already exist !!",
+        message: "already exist !!!!!!!!",
       });
     }
 
@@ -25,6 +25,7 @@ export const createUserController = async (req, res) => {
 
     res.status(201).json({
       message: "you are created successfully!!",
+      success: true,
       user,
     });
   } catch (error) {

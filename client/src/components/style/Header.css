@@ -1,0 +1,39 @@
+.header-container {
+  position: fixed;
+  background: white;
+  top: 0;
+  box-shadow: rgba(0, 0, 0, 0.10) 0px 54px 55px,
+    rgba(0, 0, 0, 0.06) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.08) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+header.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo a {
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #076542;
+}
+nav.nav ul {
+    display: flex;
+    gap: 40px;
+}
+nav.nav ul a {
+    color: #000;
+    font-size: 17px;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+nav.nav ul a:hover {
+    color: #04aa6d;
+}
+.content-header {
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+}

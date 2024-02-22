@@ -10,7 +10,7 @@ import userRoute from "./routes/userRoute.js";
 const app = express();
 
 // config dotenv
-dotenv.config();
+dotenv.config({path: "./config/config.env"});
 
 // middleware
 app.use(morgan("dev"));
@@ -20,7 +20,7 @@ app.use(express.json());
 // user routes
 app.use("/user", userRoute);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 
 // confid db
 connectDB()

@@ -8,6 +8,7 @@ export default function AllUsers() {
     <Layout>
       <div className="container">
         <div className="content">
+        <h1 className="heading">All user</h1>
           <table className="users-table">
             <thead>
               <tr>
