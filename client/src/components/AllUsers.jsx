@@ -16,7 +16,7 @@ export default function AllUsers() {
                 <th>User Name</th>
                 <th>User Email</th>
                 <th>User Password</th>
-                <th>Action</th>
+                <th>Action!</th>
               </tr>
             </thead>
             <tbody>
