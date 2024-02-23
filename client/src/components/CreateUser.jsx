@@ -4,6 +4,8 @@ import InputField from "./InputField";
 import "./style/CreateUser.css";
 import Button from "./buttons/Button";
 import { useNavigate } from "react-router-dom";
+import Loader from "./Loader";
+import MyToaster from "./MyToaster";
 
 export default function CreateUser() {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ export default function CreateUser() {
     password: "",
   });
 
+  const [res, setRes] = useState("1");
   const navigate = useNavigate();
   const changeHandler = (e) => {
     const { id, value } = e.target;
@@ -23,6 +26,7 @@ export default function CreateUser() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    setRes("1")
     await postData(formData);
   };
 
@@ -38,6 +42,13 @@ export default function CreateUser() {
 
       const result = await response.json();
       console.log(result.message);
+      if (result.success) {
+        setRes("2");
+      }
+      if (!result.success) {
+        setRes("3");
+      }
+
       if (result.success === true) {
         setTimeout(() => {
           navigate("/");
@@ -89,6 +100,9 @@ export default function CreateUser() {
             />
             <Button type="submit" text="submit" className="primary-btn" />
           </form>
+          {res === "2" && <Loader />}
+          {res === "2" && <MyToaster text="user created successfully!!" />}
+          {res === "3" && <MyToaster className="error" text="user already exist!!" />}
         </div>
       </div>
     </Layout>

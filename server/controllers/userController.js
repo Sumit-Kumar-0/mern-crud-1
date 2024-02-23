@@ -14,6 +14,7 @@ export const createUserController = async (req, res) => {
     if (existingUser) {
       return res.status(200).json({
         message: "already exist !!!!!!!!",
+        success: false
       });
     }
 

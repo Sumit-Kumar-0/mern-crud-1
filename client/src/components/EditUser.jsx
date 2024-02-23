@@ -11,7 +11,7 @@ export default function EditUser() {
     email: "",
     password: "",
   });
-  const [res, setRes] = useState(false);
+  const [res, setRes] = useState("1");
 
   const navigate = useNavigate();
   const { userId } = useParams();
@@ -64,12 +64,12 @@ export default function EditUser() {
       }
       const result = await response.json();
       console.log(result.message);
-      setRes(true);
+      setRes("2");
       setTimeout(() => {
         navigate("/");
       }, 2000);
     } catch (error) {
-      setRes(false);
+      setRes("3");
       console.error("Error:", error);
     }
   };
@@ -119,7 +119,8 @@ export default function EditUser() {
             />
             <Button type="submit" text="submit" className="primary-btn" />
           </form>
-          {res && <MyToaster text="successfully updated" />}
+          {res === "2" && <MyToaster text="successfully updated" />}
+          {res === "3" && <MyToaster text="error on updation" />}
         </div>
       </div>
     </Layout>
