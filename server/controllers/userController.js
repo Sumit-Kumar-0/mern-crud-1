@@ -52,8 +52,8 @@ export const getSingleUserController = async (req, res) => {
   const { userId } = req.params;
 
   try {
-    const singeUser = await userModel.findById({ _id: userId });
-    if (!singeUser) {
+    const singleUser = await userModel.findById({ _id: userId });
+    if (!singleUser) {
       return res.status(500).json({
         message: "user not exist!!",
         error,
@@ -61,7 +61,7 @@ export const getSingleUserController = async (req, res) => {
     }
     return res.status(200).json({
       message: "getting single user successfully!!",
-      singeUser,
+      singleUser,
     });
   } catch (error) {
     res.status(500).json({

@@ -37,6 +37,7 @@ export default function CreateUser() {
       });
 
       const result = await response.json();
+      console.log(result.message);
       if (result.success === true) {
         setTimeout(() => {
           navigate("/");

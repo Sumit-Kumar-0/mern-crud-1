@@ -5,6 +5,7 @@ import AllUsers from "./components/AllUsers";
 import CreateUser from "./components/CreateUser";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
+import EditUser from "./components/EditUser";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<AllUsers />} />
           <Route path="/addnew" element={<CreateUser />} />
-          <Route path="/*" element={<NotFound />} />
+          <Route path="/:userId" element={<EditUser />} />
+          <Route path="/*" element={<NotFound />} />/
         </Routes>
       </div>
     </div>
