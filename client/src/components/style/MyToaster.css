@@ -1,0 +1,59 @@
+.my-toaster {
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  position: absolute;
+  width: 100%;
+  max-width: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  border-radius: 6px;
+  animation: toaster 3s forwards;
+  top: -72px;
+  opacity: 1;
+}
+.my-toaster p {
+  padding: 20px 16px;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  line-height: 30px;
+}
+.bottom-line {
+  height: 5px;
+  background: greenyellow;
+  border-radius: 0 0 6px 6px;
+  width: 1%;
+  animation: bottom 3s forwards;
+}
+
+.my-toaster .error {
+    background: red;
+}
+
+@keyframes toaster {
+  0% {
+    top: -72px;
+  }
+  10% {
+    top: 42px;
+  }
+  98% {
+    top: 42px;
+  }
+  99% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    top: -72px;
+  }
+}
+@keyframes bottom {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 100%;
+  }
+}
