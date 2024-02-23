@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import InputField from "./InputField";
 import Button from "./buttons/Button";
+import { MyToaster } from "./MyToaster";
 
 export default function EditUser() {
   const [formData, setFormData] = useState({
@@ -38,6 +39,7 @@ export default function EditUser() {
         password,
       });
     } catch (error) {
+      MyToaster("error on fetching of updating", "error")
       console.error("Error:", error);
     }
   };
@@ -62,11 +64,13 @@ export default function EditUser() {
       }
       const result = await response.json();
       console.log(result.message);
+      MyToaster(result.message)
       setTimeout(() => {
         navigate("/");
       }, 2000);
     } catch (error) {
       console.error("Error:", error);
+      MyToaster("error on updating user", "error")
     }
   };
 

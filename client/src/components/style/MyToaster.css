@@ -27,8 +27,8 @@
   animation: bottom 3s forwards;
 }
 
-.my-toaster .bottom-line .error {
-    background: red;
+.my-toaster.error .bottom-line{
+    background: red !important;
 }
 
 @keyframes toaster {

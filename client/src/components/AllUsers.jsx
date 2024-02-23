@@ -11,10 +11,14 @@ export default function AllUsers() {
   const getData = async () => {
     try {
       const response = await fetch("http://localhost:8080/user/");
+
+
       const result = await response.json();
       setUserData(result.allUser);
+      console.log(result.message);
     } catch (error) {
       console.error("Error fetching data:", error);
+      MyToaster("error while fetching all users", "error")
     }
   };
 
@@ -35,7 +39,7 @@ export default function AllUsers() {
     }
     const deletedUser = await response.json();
     console.log(deletedUser.message);
-    MyToaster(deletedUser.message);
+    MyToaster(deletedUser.message, "error");
     getData();
   };
 

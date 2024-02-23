@@ -40,14 +40,19 @@ export default function CreateUser() {
 
       const result = await response.json();
       console.log(result.message);
-      MyToaster(result.message, "error")
-
+      
       if (result.success === true) {
+        MyToaster(result.message)
         setTimeout(() => {
           navigate("/");
         }, 1000);
       }
+      if (result.success === false) {
+        MyToaster(result.message, "error")
+      }
+      console.log(result);
     } catch (error) {
+      MyToaster("error while creating user", "error")
       console.error("Error:", error);
     }
   };
