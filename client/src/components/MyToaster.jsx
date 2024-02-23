@@ -1,20 +1,21 @@
-import React, { useEffect, useRef } from "react";
 import "./style/MyToaster.css";
 
-export default function MyToaster({ text, className }) {
-  const toastRef = useRef();
+export function MyToaster(text, className = "success", duration = 3000) {
+  const toastElement = document.createElement("div");
+  toastElement.classList.add("my-toaster");
+  toastElement.classList.add(className);
+  const para = document.createElement("p");
+  para.innerText = text;
+  const inner = document.createElement("div");
+  inner.classList.add("bottom-line");
+  toastElement.appendChild(para);
+  toastElement.appendChild(inner);
+  document.body.appendChild(toastElement);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      toastRef.current.style.opacity = 0;
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <div ref={toastRef} className={`my-toaster ${className}`}>
-      <p>{text}</p>
-      <div className="bottom-line"></div>
-    </div>
-  );
+  setTimeout(() => {
+    toastElement.classList.add(className);
+    setTimeout(() => {
+      toastElement.remove();
+    }, 2000);
+  }, duration);
 }

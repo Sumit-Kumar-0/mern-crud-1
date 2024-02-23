@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import InputField from "./InputField";
 import Button from "./buttons/Button";
-import MyToaster from "./MyToaster";
 
 export default function EditUser() {
   const [formData, setFormData] = useState({
@@ -11,7 +10,6 @@ export default function EditUser() {
     email: "",
     password: "",
   });
-  const [res, setRes] = useState("1");
 
   const navigate = useNavigate();
   const { userId } = useParams();
@@ -64,12 +62,10 @@ export default function EditUser() {
       }
       const result = await response.json();
       console.log(result.message);
-      setRes("2");
       setTimeout(() => {
         navigate("/");
       }, 2000);
     } catch (error) {
-      setRes("3");
       console.error("Error:", error);
     }
   };
@@ -77,7 +73,6 @@ export default function EditUser() {
   useEffect(() => {
     getUserData();
   }, [setFormData]);
-  console.log(res);
   return (
     <Layout>
       <div className="container creat-user-container">
@@ -119,8 +114,6 @@ export default function EditUser() {
             />
             <Button type="submit" text="submit" className="primary-btn" />
           </form>
-          {res === "2" && <MyToaster text="successfully updated" />}
-          {res === "3" && <MyToaster text="error on updation" />}
         </div>
       </div>
     </Layout>

@@ -27,7 +27,7 @@
   animation: bottom 3s forwards;
 }
 
-.my-toaster .error {
+.my-toaster .bottom-line .error {
     background: red;
 }
 

@@ -3,11 +3,10 @@ import "./style/AllUsers.css";
 import { Trash2, Pencil } from "lucide-react";
 import Layout from "./Layout/Layout";
 import { Link } from "react-router-dom";
-import MyToaster from "./MyToaster";
+import { MyToaster } from "./MyToaster";
 
 export default function AllUsers() {
   const [userData, setUserData] = useState([]);
-  const [ res, setRes ] = useState(false)
 
   const getData = async () => {
     try {
@@ -15,7 +14,6 @@ export default function AllUsers() {
       const result = await response.json();
       setUserData(result.allUser);
     } catch (error) {
-      setRes(true)
       console.error("Error fetching data:", error);
     }
   };
@@ -37,6 +35,7 @@ export default function AllUsers() {
     }
     const deletedUser = await response.json();
     console.log(deletedUser.message);
+    MyToaster(deletedUser.message);
     getData();
   };
 
@@ -77,7 +76,6 @@ export default function AllUsers() {
             </tbody>
           </table>
           {userData.length === 0 && <h1>There is no user Available</h1>}
-          {res &&  <MyToaster className="error" text="error while fetching data for all users"/>}
         </div>
       </div>
     </Layout>
